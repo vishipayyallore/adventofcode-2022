@@ -10,7 +10,7 @@ func GetInput(filename string) []string {
 	bs, err := ioutil.ReadFile(filename)
 
 	if err != nil {
-		print("Error occurred at newDeckFromFile() - ", err)
+		print("Error occurred at utilities::GetInput() - ", err)
 		os.Exit(1)
 	}
 
