@@ -1,11 +1,10 @@
 package main
 
 import (
+	"adventofcode/day1/utilities"
 	"fmt"
-	"io/ioutil"
 	"os"
 	"strconv"
-	"strings"
 )
 
 func main() {
@@ -14,7 +13,7 @@ func main() {
 	// fileNameWithPath := "./data/sample.txt"
 	fileNameWithPath := "./data/input.txt"
 
-	lines := getInput(fileNameWithPath)
+	lines := utilities.GetInput(fileNameWithPath)
 
 	// Print all lines. Only for debug
 	// fmt.Println(lines)
@@ -32,7 +31,12 @@ func solveProblem(lines []string) int {
 		// Print value and type. Only for debug
 		// fmt.Printf("Value: %v || type:%T \n", value, value)
 
-		c, _ := strconv.Atoi(value) // Cast string to int
+		c, err := strconv.Atoi(value) // Cast string to int
+		if err != nil {
+			print("Error occurred at newDeckFromFile() - ", err)
+			os.Exit(1)
+		}
+
 		sumCalories += c
 
 		if value == "" {
@@ -43,15 +47,4 @@ func solveProblem(lines []string) int {
 		}
 	}
 	return calories
-}
-
-func getInput(filename string) []string {
-	bs, err := ioutil.ReadFile(filename)
-
-	if err != nil {
-		print("Error occurred at newDeckFromFile() - ", err)
-		os.Exit(1)
-	}
-
-	return strings.Split(string(bs), "\r\n")
 }
