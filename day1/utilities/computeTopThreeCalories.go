@@ -1,7 +1,6 @@
 package utilities
 
 import (
-	"fmt"
 	"strconv"
 )
 
@@ -39,7 +38,7 @@ func SolveTopThreeProblem(lines []string) int {
 		}
 	}
 
-	fmt.Printf("%v %v %v", topThreeCalories[0], topThreeCalories[1], topThreeCalories[2])
+	// fmt.Printf("%v %v %v", topThreeCalories[0], topThreeCalories[1], topThreeCalories[2])
 
 	calories = sum(topThreeCalories)
 

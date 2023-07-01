@@ -8,7 +8,7 @@ import (
 func main() {
 	fmt.Println("Advent of Code - Day 1 - Go - 2022")
 
-	fileNameWithPath := "./data/sample.txt" // "./data/input.txt" OR "./data/sample.txt"
+	fileNameWithPath := "./data/input.txt" // "./data/input.txt" OR "./data/sample.txt"
 
 	lines := utilities.GetInput(fileNameWithPath)
 	// fmt.Println(lines)  // Print all lines. Only for debug
@@ -19,7 +19,7 @@ func main() {
 
 	topThreeCalories := utilities.SolveTopThreeProblem(lines)
 
-	fmt.Println("Top three Calories: ", topThreeCalories)
+	fmt.Println("Sum of Top three Calories: ", topThreeCalories)
 }
 
 // topThreeCalories := make([]int, 3)
