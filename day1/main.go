@@ -16,4 +16,12 @@ func main() {
 	calories := utilities.SolveProblem(lines)
 
 	fmt.Println("Calories: ", calories)
+
+	topThreeCalories := utilities.SolveTopThreeProblem(lines)
+
+	fmt.Println("Sum of Top three Calories: ", topThreeCalories)
 }
+
+// topThreeCalories := make([]int, 3)
+
+// fmt.Printf("%v %v %v", topThreeCalories[0], topThreeCalories[1], topThreeCalories[2])
